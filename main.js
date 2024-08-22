@@ -71,7 +71,7 @@ loader.load('scene.gltf', (gltf) => {
 });
 
 document.body.appendChild(ARButton.createButton(renderer));
-window.addEventListener('resize', () => {
+globalThis.addEventListener('resize', () => {
   camera.aspect = globalThis.innerWidth / globalThis.innerHeight;
   camera.updateProjectionMatrix();
   renderer.setSize(globalThis.innerWidth, globalThis.innerHeight);
