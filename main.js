@@ -6,9 +6,9 @@ import { ARButton } from 'https://unpkg.com/three@0.126.0/examples/jsm/webxr/ARB
 const renderer = new THREE.WebGLRenderer({ antialias: true });
 renderer.outputColorSpace = THREE.SRGBColorSpace;
 
-renderer.setSize(window.innerWidth, window.innerHeight);
+renderer.setSize(globalThis.innerWidth, globalThis.innerHeight);
 renderer.setClearColor(0x000000);
-renderer.setPixelRatio(window.devicePixelRatio);
+renderer.setPixelRatio(globalThis.devicePixelRatio);
 renderer.xr.enabled = true;
 renderer.shadowMap.enabled = true;
 renderer.shadowMap.type = THREE.PCFSoftShadowMap;
@@ -17,7 +17,7 @@ document.body.appendChild(renderer.domElement);
 
 const scene = new THREE.Scene();
 
-const camera = new THREE.PerspectiveCamera(45, window.innerWidth / window.innerHeight, 1, 1000);
+const camera = new THREE.PerspectiveCamera(45, globalThis.innerWidth / globalThis.innerHeight, 1, 1000);
 camera.position.set(4, 5, 11);
 
 const controls = new OrbitControls(camera, renderer.domElement);
